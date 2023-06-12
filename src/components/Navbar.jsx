@@ -26,17 +26,24 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-      </div>
 
-      <div
-        className="links-container"
-        ref={linksContainerRef}
-        style={linkStyles}
-      >
-        <ul className="links" ref={linksRef}>
-          {links.map((link) => (
+        <div
+          className="links-container"
+          ref={linksContainerRef}
+          style={linkStyles}
+        >
+          <ul className="links" ref={linksRef}>
+            {links.map((link) => (
+              <li key={link.id}>
+                <a href={link.url}>{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <ul className="social-icons">
+          {social.map((link) => (
             <li key={link.id}>
-              <a href={link.url}>{link.text}</a>
+              <a href={link.url}>{link.icon}</a>
             </li>
           ))}
         </ul>
